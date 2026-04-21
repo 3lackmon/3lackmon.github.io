@@ -24,11 +24,27 @@
             line-height: 1.6;
         }
 
-        /* Hero / Introduction */
-        .hero {
+        /* Hero / Introduction Layout */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
             padding: 100px 20px;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            flex: 1;
         }
 
         .mono-tag {
@@ -159,7 +175,17 @@
             font-size: 0.85rem;
         }
 
-        @media (max-width: 600px) {
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 20px;
+            }
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
             .resume-header { flex-direction: column; text-align: left; }
             .contact-list { text-align: left; }
         }
@@ -167,12 +193,16 @@
 </head>
 <body>
 
-    <header class="hero">
-        <p class="mono-tag">Hi, my name is</p>
-        <h1>Elijah Blackmon.</h1>
-        <p class="hero-p">
-            I am a student developer and data analyst focused on building efficient software solutions and mastering database technologies.
-        </p>
+    <header class="hero-content">
+        <img src="me.jpg" alt="Elijah Blackmon" class="profile-img">
+        
+        <div class="hero-text">
+            <p class="mono-tag">Hi, my name is</p>
+            <h1>Elijah Blackmon.</h1>
+            <p class="hero-p">
+                I am a student developer and data analyst focused on building efficient software solutions and mastering database technologies.
+            </p>
+        </div>
     </header>
 
     <div class="container">
@@ -200,15 +230,15 @@
                         <p style="color: var(--accent);">Associate of Applied Science Student</p>
                     </div>
                     <ul class="contact-list">
-                        <li>(361) 399-0173 </li>
-                        <li>elijahblackmon1010@gmail.com </li>
-                        <li>Corpus Christi, TX </li>
+                        <li>(361) 399-0173 [cite: 7]</li>
+                        <li>elijahblackmon1010@gmail.com [cite: 7]</li>
+                        <li>Corpus Christi, TX [cite: 7]</li>
                     </ul>
                 </div>
 
                 <div class="resume-section">
                     <h4 style="color: var(--accent); margin-bottom: 10px;">OBJECTIVE</h4>
-                    <p>I aim to further strengthen my programming skills by solving real-world problems and strengthening my understanding of databases and IT Technologies.</p>
+                    <p>I aim to further strengthen my programming skills by solving real-world problems and strengthening my understanding of databases and IT Technologies[cite: 9, 10].</p>
                 </div>
 
                 <div class="resume-section">
@@ -228,7 +258,7 @@
                     <div class="res-item">
                         <div class="res-row">
                             <span>BroadStreet Institute Internship</span>
-                            <span class="date-label">02/2026 — Current </span>
+                            <span class="date-label">02/2026 — Current [cite: 23]</span>
                         </div>
                     </div>
                     <div class="res-item">
