@@ -60,4 +60,134 @@
 
         /* Content Grid */
         .container {
-            max
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--text-header);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            background: var(--border);
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 6px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tag-list {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #1f242c;
+            padding: 4px 10px;
+            border-radius: 12px;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #484f58;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p class="mono">Hi, my name is</p>
+        <h1>Elijah Blackmon.</h1>
+        <p class="bio">
+            I'm a sophomore college student specializing in <strong>Data Engineering</strong> and <strong>Full-Stack Development</strong>. I build scalable applications and data pipelines.
+        </p>
+    </header>
+
+    <div class="container">
+        <h2>Technical Projects</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <h3>Predictive Analytics</h3>
+                <p>Developing SQL-driven architectures and Python scripts to analyze and visualize complex datasets.</p>
+                <div class="tag-list">
+                    <span class="tag">SQL</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Data Viz</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>UI/UX Development</h3>
+                <p>Experience in creating responsive, interactive web components including image carousels and dynamic project trackers.</p>
+                <div class="tag-list">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Logic & Simulations</h3>
+                <p>Implementing algorithmic challenges such as the "Game of Life" and custom state-management tools.</p>
+                <div class="tag-list">
+                    <span class="tag">Algorithms</span>
+                    <span class="tag">Logic</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        Built by Elijah Blackmon &copy; 2026
+    </footer>
+
+</body>
+</html>
