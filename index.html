@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elijah Blackmon | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <title>Elijah Blackmon | Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-primary: #050505;
-            --bg-secondary: #0f0f0f;
-            --accent: #D4AF37; /* Classic Gold */
-            --text-main: #e0e0e0;
-            --text-muted: #888;
-            --border: #222;
+            --bg: #0d1117; /* GitHub Dark Theme Gray */
+            --card-bg: #161b22;
+            --accent: #58a6ff; /* Developer Blue */
+            --text-primary: #c9d1d9;
+            --text-header: #ffffff;
+            --border: #30363d;
         }
 
         * {
@@ -23,161 +23,41 @@
         }
 
         body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
+            background-color: var(--bg);
+            color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
         /* Hero Section */
         header {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-            padding: 0 20px;
+            padding: 100px 20px;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 400;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--text-header);
+            line-height: 1.1;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--accent);
-            font-weight: 300;
+        .bio {
+            max-width: 600px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #8b949e;
         }
 
-        /* Container */
+        /* Content Grid */
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            border-left: 3px solid var(--accent);
-            padding-left: 1.5rem;
-        }
-
-        /* Project Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 1px solid transparent;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            border-bottom: 1px solid var(--accent);
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 768px) {
-            header { height: 60vh; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <p class="subtitle">Developer & Founder</p>
-        <h1>Elijah Blackmon</h1>
-    </header>
-
-    <div class="container">
-        <h2>Selected Works</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <div>
-                    <h3>Maison Aurielle</h3>
-                    <p>Luxury jewelry brand entity. Managing full-stack e-commerce operations, brand identity, and supply chain logistics.</p>
-                </div>
-                <a href="#" class="btn">View Brand Case Study</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Data Engineering</h3>
-                    <p>Building robust predictive models and SQL architectures. Focused on transforming raw data into actionable business intelligence.</p>
-                </div>
-                <a href="#" class="btn">View Repository</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Software Tools</h3>
-                    <p>Custom JavaScript implementations ranging from interactive UI components to complex logical simulations like "Game of Life".</p>
-                </div>
-                <a href="#" class="btn">Explore Code</a>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2026 ELIJAH BLACKMON. ALL RIGHTS RESERVED.
-    </footer>
-
-</body>
-</html>
+            max
