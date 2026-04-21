@@ -3,191 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elijah Blackmon | Developer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
-    
+    <title>Elijah Blackmon | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0d1117; /* GitHub Dark Theme Gray */
+            --bg: #0d1117;
             --card-bg: #161b22;
-            --accent: #58a6ff; /* Developer Blue */
+            --accent: #58a6ff;
             --text-primary: #c9d1d9;
             --text-header: #ffffff;
             --border: #30363d;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-        }
-
-        /* Hero Section */
-        header {
-            padding: 100px 20px;
-            text-align: left;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            color: var(--text-header);
-            line-height: 1.1;
-        }
-
-        .bio {
-            max-width: 600px;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: #8b949e;
-        }
-
-        /* Content Grid */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
             padding: 40px 20px;
         }
 
-        h2 {
-            font-size: 1.8rem;
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 50px;
+            border-radius: 8px;
+        }
+
+        /* Header / Contact */
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
             color: var(--text-header);
-            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .contact-info {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-top: 10px;
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        h2::after {
-            content: "";
-            height: 1px;
-            background: var(--border);
-            flex-grow: 1;
-            margin-left: 20px;
+        /* Typography */
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
         }
 
-        .grid {
+        section { margin-bottom: 40px; }
+
+        .item-title {
+            font-weight: 700;
+            color: var(--text-header);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+
+        .sub-title {
+            font-style: italic;
+            color: #8b949e;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Skills Layout */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 6px;
-            transition: transform 0.2s, border-color 0.2s;
+        ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-
-        .card h3 {
+        li::before {
+            content: "▹ ";
             color: var(--accent);
-            margin-bottom: 15px;
-            font-family: 'JetBrains Mono', monospace;
         }
 
-        .tag-list {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            background: #1f242c;
-            padding: 4px 10px;
-            border-radius: 12px;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            color: #484f58;
-            font-size: 0.9rem;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+        @media (max-width: 600px) {
+            .resume-container { padding: 25px; }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <p class="mono">Hi, my name is</p>
-        <h1>Elijah Blackmon.</h1>
-        <p class="bio">
-            I'm a sophomore college student specializing in <strong>Data Engineering</strong> and <strong>Full-Stack Development</strong>. I build scalable applications and data pipelines.
-        </p>
-    </header>
+    <div class="resume-container">
+        <header>
+            <h1>Elijah Blackmon</h1>
+            <div class="contact-info">
+                <span>(361) 399-0173</span>
+                <span>elijahblackmon1010@gmail.com</span>
+                <span>Corpus Christi, TX</span>
+            </div>
+        </header>
 
-    <div class="container">
-        <h2>Technical Projects</h2>
-        <div class="grid">
+        <section id="objective">
+            <h2>Objective</h2>
+            <p>I aim to further strengthen my programming skills by solving real-world problems. I want to strengthen my understanding of databases and IT Technologies.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="item-title">
+                <span>Del Mar College</span>
+                <span class="date">Expected May 2026</span>
+            </div>
+            <span class="sub-title">AAS in Computer Programming, Minor in Data Science </span>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <strong>Software</strong>
+                    <ul>
+                        <li>JavaScript (VS Code) [cite: 14]</li>
+                        <li>Python Applications [cite: 15]</li>
+                        <li>MySQL Workbench [cite: 17]</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>Analytics</strong>
+                    <ul>
+                        <li>Excel [cite: 16]</li>
+                        <li>Tableau [cite: 16]</li>
+                        <li>Power BI [cite: 16]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
             
-            <div class="card">
-                <h3>Predictive Analytics</h3>
-                <p>Developing SQL-driven architectures and Python scripts to analyze and visualize complex datasets.</p>
-                <div class="tag-list">
-                    <span class="tag">SQL</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">Data Viz</span>
+            <div style="margin-bottom: 25px;">
+                <div class="item-title">
+                    <span>BroadStreet Institute Internship</span>
+                    <span class="date">02/2026 — Current</span>
                 </div>
+                <span class="sub-title">Internship [cite: 23]</span>
             </div>
 
-            <div class="card">
-                <h3>UI/UX Development</h3>
-                <p>Experience in creating responsive, interactive web components including image carousels and dynamic project trackers.</p>
-                <div class="tag-list">
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
+            <div>
+                <div class="item-title">
+                    <span>HEB Customer Service Assistant</span>
+                    <span class="date">03/2024 — 08/2025</span>
                 </div>
+                <span class="sub-title">Customer Service [cite: 19]</span>
+                <p>Directly assisted every customer encountered, solving social conflicts and exercising clear communication[cite: 19, 20].</p>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Logic & Simulations</h3>
-                <p>Implementing algorithmic challenges such as the "Game of Life" and custom state-management tools.</p>
-                <div class="tag-list">
-                    <span class="tag">Algorithms</span>
-                    <span class="tag">Logic</span>
-                </div>
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="item-title">
+                <span>Game of Life</span>
             </div>
+            <p>Built inside VS Code using JavaScript, HTML, and CSS manipulation.</p>
+        </section>
 
-        </div>
     </div>
-
-    <footer>
-        Built by Elijah Blackmon &copy; 2026
-    </footer>
 
 </body>
 </html>
